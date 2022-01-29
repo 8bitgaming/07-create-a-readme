@@ -4,10 +4,10 @@ const fs = require('fs')
 const generateMarkdown = require('../Develop/utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
-answers = []
-const promptUser = async () => {
+let answers = []
+const promptUser = () => {
 
-    const readmeData = await inquirer.prompt(
+    return inquirer.prompt(
         [{
             type: 'input',
             name: 'title',
@@ -38,23 +38,56 @@ const promptUser = async () => {
         },
         {
             type: 'input',
+            name: 'credits',
+            message: 'List any contributors or third-party assets you wish to mention.',
+        },
+        {
+            type: 'list',
+            name: 'license',
+            message: 'Select a license type if you wish to include one. Arrow keys to move, Enter to select:',
+            choices: ['None', 'MIT', 'GNU GPLv3', 'Mozilla Public 2.0', 'The Unlicense', 'Apache 2.0']
+        },
+        {
+            type: 'confirm',
+            name: 'contributor',
+            message: 'Would you like others to contribute to your project?',
+            default: false
+        },
+        {
+            type: 'input',
             name: 'tests',
             message: 'Provide testing instructions:',
-        }
-        ]);
-    answers.push(readmeData);
-    console.log(answers);
-};
+        },
+        ])
+        ;
+  };
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeToFile = fileContent => {
+    return new Promise((resolve, reject) => {
+      fs.writeFile('./README.md', JSON.stringify(answers), err => {
+        if (err) {
+          reject(err);
+          return;
+        }
+          resolve({
+          ok: true,
+          message: 'File created!'
+        });
+      });
+    });
+  }; 
 
-// TODO: Create a function to initialize app
-// function init() {
-    
-// }
+// initialize the app
+const init = () => {
+    promptUser(answer => answers.push(answer))
+    .then(console.log(answers))
+    .then(generateMarkdown(answers))
+    .then(writeToFile())
+}
+
 
 // Function call to initialize app
-// init();
-promptUser()
+init();
+
