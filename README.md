@@ -1,14 +1,16 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-# project 12
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+# proje
 
 ## Description
-description
+asdf
 
 ## Installation instructions 
-Installation
+feqwer
 
   ## Usage instructions 
-  us it
+  qwerew
 
   ## Additional Contributors
-  jere adsf
+  qwerwe
+##License
+    Licensed under the Mozilla Public 2.0 license.
