@@ -4,10 +4,9 @@ const fs = require('fs')
 const generateMarkdown = require('../Develop/utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
-let answers = []
-const promptUser = () => {
+const promptUser = async () => {
 
-    return inquirer.prompt(
+   await inquirer.prompt(
         [{
             type: 'input',
             name: 'title',
@@ -24,7 +23,15 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'description',
-            message: 'Provide a description of the project:',
+            message: 'Provide a description of the project (required):',
+            validate: nameInput_1 => {
+                if (nameInput_1) {
+                    return true;
+                } else {
+                    console.log('Please enter a description!');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
@@ -59,14 +66,21 @@ const promptUser = () => {
             message: 'Provide testing instructions:',
         },
         ])
+            .then(data => {
+                return generateMarkdown(data)
+            })
+            .then(markdown => {
+               return writeToFile(markdown)
+            })
         ;
   };
 
 
 // TODO: Create a function to write README file
+//check for Dist folder and create one using fs if needed
 const writeToFile = fileContent => {
     return new Promise((resolve, reject) => {
-      fs.writeFile('./README.md', JSON.stringify(answers), err => {
+      fs.writeFile('../Dist/README.md', fileContent, err => {
         if (err) {
           reject(err);
           return;
@@ -80,14 +94,11 @@ const writeToFile = fileContent => {
   }; 
 
 // initialize the app
-const init = () => {
-    promptUser(answer => answers.push(answer))
-    .then(console.log(answers))
-    .then(generateMarkdown(answers))
-    .then(writeToFile())
+const init = async () => {
+    await promptUser()
 }
 
 
 // Function call to initialize app
-init();
+init()
 
