@@ -2,6 +2,7 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
 const generateMarkdown = require('../Develop/utils/generateMarkdown')
+let dir = '../Dist'
 
 // TODO: Create an array of questions for user input
 const promptUser = async () => {
@@ -65,6 +66,16 @@ const promptUser = async () => {
             name: 'tests',
             message: 'Provide testing instructions:',
         },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Provide your github username:',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Provide your e-mail address:',
+        },
         ])
             .then(data => {
                 return generateMarkdown(data)
@@ -80,6 +91,9 @@ const promptUser = async () => {
 //check for Dist folder and create one using fs if needed
 const writeToFile = fileContent => {
     return new Promise((resolve, reject) => {
+    if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir)
+    }
       fs.writeFile('../Dist/README.md', fileContent, err => {
         if (err) {
           reject(err);
@@ -97,7 +111,6 @@ const writeToFile = fileContent => {
 const init = async () => {
     await promptUser()
 }
-
 
 // Function call to initialize app
 init()
