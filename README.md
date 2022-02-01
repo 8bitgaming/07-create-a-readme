@@ -17,4 +17,4 @@ asdfasdf
 ## License
     Licensed under the MIT license.
 ## Table of Contents
-<li align='left'>* [Installation](#Installation-instructions)<br> * [Usage](#Usage-instructions)<br> * [Contributors](#Additional-Contributors)</li>
+<align='left'>* [Installation](#Installation-instructions)<br> * [Usage](#Usage-instructions)<br> * [Contributors](#Additional-Contributors)</>
