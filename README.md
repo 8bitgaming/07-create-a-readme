@@ -17,4 +17,6 @@ adsfas
 ## License
     Licensed under the MIT license.
 ## Table of Contents
-    * [Installation](#Installation-instructions) * [Usage](#Usage-instructions) * [Contributors](#Additional-Contributors)
+    * [Installation](#Installation-instructions) 
+    * [Usage](#Usage-instructions) 
+    * [Contributors](#Additional-Contributors)
