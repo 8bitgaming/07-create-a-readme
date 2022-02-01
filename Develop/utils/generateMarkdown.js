@@ -1,6 +1,8 @@
 //set a global variable for some repeated text
 const noInfo = 'No information available.'
 
+
+//Below is logic for each section of the readme - checks if there is a value, otherwise displays no info text
 const installationDisplay = (installation) => {
 if (installation) {
   return `
@@ -56,6 +58,7 @@ return `
 ${noInfo}`
     }
 
+    //create the markup for the license badge
 const licenseBadge = (license) => {
   if (license !== 'None') {
   let badge = ''
@@ -119,7 +122,7 @@ ${noInfo}`
 return finalText
     }
 
-// generate markdown for README.
+// generate the full markdown for the readme
 function generateMarkdown(data) {
   const { title, description, installation, usage, contributor, credits, license, tests, github, email} = data
   
