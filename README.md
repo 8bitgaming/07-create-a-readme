@@ -3,20 +3,18 @@
 # asdfasdf
 
 ## Description
-adsfasdf
+asdfasd
 
 
 ## Installation instructions 
 asdfasdf
 
   ## Usage instructions 
-  asdfadsf
+  wqefqwef
 
   ## Additional Contributors
-  asdfsda
+  asdfqwef
 ## License
     Licensed under the MIT license.
 ## Table of Contents
-
-* [Installation](#Installation-instructions)<br> * [Usage](#Usage-instructions)<br> * [Contributors](#Additional-Contributors)
-
+* [Installation](#Installation-instructions)  * [Usage](#Usage-instructions)  * [Contributors](#Additional-Contributors)
