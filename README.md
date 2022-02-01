@@ -17,4 +17,4 @@ qweffddfag
 ## License
     Licensed under the MIT license.
 ## Table of Contents
-* [Installation](#Installation-instructions)<br/>* [Usage](#Usage-instructions)<br/>* [Contributors](#Additional-Contributors)
+* [Installation](#Installation-instructions)<br />* [Usage](#Usage-instructions)<br />* [Contributors](#Additional-Contributors)
