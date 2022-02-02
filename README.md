@@ -20,6 +20,7 @@ Make sure you have Node installed on your computer, then clone this repository. 
 
 ## Usage instructions 
 Once you have started the generator using Node index, follow the prompts to fill out the desired sections of your readme. Note that the project name and description are required. Others are optional. If you select "None" for the license - no license will be indicated.
+Link to video showing how the application is used: [LINK](https://drive.google.com/file/d/1VNMBys6idvaSBb67AwZc55IFGO7j_7p_/view?usp=sharing)
 
 ## Contributing to this project
 Your contributions are welcome to this project! Feel free to fork this repository and submit pull requests with any contributions. For further information please see the questions section below.
